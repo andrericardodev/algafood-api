@@ -1,19 +1,19 @@
 package com.algaworks.algafood.domain.model;
 
+import java.math.BigDecimal;
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
-@Entity
-@Table(name = "tab_cozinhas")
-public class Cozinha {
+public class Restaurante {
 
     @Id
     private Long id;
 
-    @Column(name = "nom_cozinha", length = 30)
+    @Column
     private String nome;
+
+    @Column(name = "taxa_frete")
+    private BigDecimal taxaFrete;
 
     public Long getId() {
         return id;
@@ -29,6 +29,14 @@ public class Cozinha {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public BigDecimal getTaxaFrete() {
+        return taxaFrete;
+    }
+
+    public void setTaxaFrete(BigDecimal taxaFrete) {
+        this.taxaFrete = taxaFrete;
     }
 
     @Override
@@ -47,7 +55,7 @@ public class Cozinha {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Cozinha other = (Cozinha) obj;
+        Restaurante other = (Restaurante) obj;
         if (id == null) {
             if (other.id != null)
                 return false;
