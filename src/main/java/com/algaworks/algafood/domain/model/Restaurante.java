@@ -24,6 +24,8 @@ public class Restaurante {
     
     @Column(nullable = false)
     private String nome;
+
+    @Column(nullable = false)
     private BigDecimal taxaFrete;
 
     @ManyToOne
