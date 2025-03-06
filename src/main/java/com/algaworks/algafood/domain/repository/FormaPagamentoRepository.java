@@ -6,11 +6,11 @@ import com.algaworks.algafood.domain.model.FormaPagamento;
 
 public interface FormaPagamentoRepository {
 
-    List<FormaPagamento> todas();
+    List<FormaPagamento> listar();
 
-    FormaPagamento porId(Long id);
+    FormaPagamento buscar(Long id);
 
-    FormaPagamento adicionar(FormaPagamento formaPagamento);
+    FormaPagamento salvar(FormaPagamento formaPagamento);
 
     void remover(FormaPagamento formaPagamento);
 }

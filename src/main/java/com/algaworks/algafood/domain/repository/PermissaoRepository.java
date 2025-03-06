@@ -6,11 +6,11 @@ import com.algaworks.algafood.domain.model.Permissao;
 
 public interface PermissaoRepository {
 
-    List<Permissao> todas();
+    List<Permissao> listar();
 
-    Permissao porId(Long id);
+    Permissao buscar(Long id);
 
-    Permissao adicionar(Permissao permissao);
+    Permissao salvar(Permissao permissao);
 
     void remover(Permissao permissao);
 

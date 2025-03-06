@@ -12,3 +12,11 @@ INSERT INTO forma_pagamento (descricao) VALUES ('PIX');
 
 INSERT INTO permissao (nome, descricao) VALUES ('ADMIN', 'Administradores');
 INSERT INTO permissao (nome, descricao) VALUES ('USUARIO', 'Usuários');
+
+INSERT INTO estado (nome) VALUES ('Alagoas');
+INSERT INTO estado (nome) VALUES ('Minas Gerais');
+INSERT INTO estado (nome) VALUES ('São Paulo');
+
+INSERT INTO cidade (nome, estado_id) VALUES ('Maceió', 1);
+INSERT INTO cidade (nome, estado_id) VALUES ('Belo Horizonte', 2);
+INSERT INTO cidade (nome, estado_id) VALUES ('Campinas', 3);
