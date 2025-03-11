@@ -23,7 +23,7 @@ public class CadastroRestauranteService {
 
         if (cozinha == null) {
             throw new EntidadeNaoEncontradaException(
-                    String.format("Não existe cadastro de cozinha com o código %d", cozinhaId)
+                    String.format("Não existe um cadastro de cozinha com o código %d", cozinhaId)
             );
         }
 
