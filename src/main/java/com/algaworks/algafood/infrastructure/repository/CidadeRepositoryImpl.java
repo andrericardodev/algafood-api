@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
+import com.algaworks.algafood.domain.exception.EntidadeNaoEncontradaException;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -36,8 +37,13 @@ public class CidadeRepositoryImpl implements CidadeRepository {
 
     @Transactional
     @Override
-    public void remover(Cidade cidade) {
-        cidade = buscar(cidade.getId());
+    public void remover(Long cidadeId) {
+        Cidade cidade = buscar(cidadeId);
+        if (cidade == null) {
+            throw new EntidadeNaoEncontradaException(
+                    String.format("Não existe Cidade com o código %d", cidadeId)
+            );
+        }
         manager.remove(cidade);
     }
 
