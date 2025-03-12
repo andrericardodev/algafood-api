@@ -31,11 +31,9 @@ public class EstadoController {
     @GetMapping("/{estadoId}")
     public ResponseEntity<Estado> buscar(@PathVariable Long estadoId) {
         Estado estado = estadoRepository.buscar(estadoId);
-
         if (estado != null) {
             return ResponseEntity.ok(estado);
         }
-
         return ResponseEntity.notFound().build();
     }
 
@@ -48,13 +46,11 @@ public class EstadoController {
     @PutMapping("/{estadoId}")
     public ResponseEntity<Estado> atualizar(@PathVariable Long estadoId, @RequestBody Estado estado) {
         Estado estadoAtual = estadoRepository.buscar(estadoId);
-
         if (estadoAtual != null) {
             BeanUtils.copyProperties(estado, estadoAtual, "id");
             estadoAtual = cadastroEstado.salvar(estadoAtual);
             return ResponseEntity.ok(estadoAtual);
         }
-
         return ResponseEntity.notFound().build();
     }
 

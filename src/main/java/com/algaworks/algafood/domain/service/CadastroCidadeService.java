@@ -29,7 +29,6 @@ public class CadastroCidadeService {
                     String.format("Não existe um cadastro de estado com o código %d", estadoId)
             );
         }
-
         cidade.setEstado(estado);
 
         return cidadeRepository.salvar(cidade);
