@@ -24,7 +24,7 @@ public class CadastroRestauranteService {
                         String.format("Não existe um cadastro de cozinha com o código %d", cozinhaId)
                 ));
         restaurante.setCozinha(cozinha);
-        return restauranteRepository.salvar(restaurante);
+        return restauranteRepository.save(restaurante);
     }
 
 }
